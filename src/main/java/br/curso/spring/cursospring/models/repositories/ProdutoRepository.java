@@ -1,7 +1,9 @@
 package br.curso.spring.cursospring.models.repositories;
 
+import java.util.List;
 import java.util.Optional;
 
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.data.repository.query.Param;
@@ -9,9 +11,9 @@ import org.springframework.data.repository.query.Param;
 import br.curso.spring.cursospring.models.entities.Produto;
 import jakarta.validation.Valid;
 
-public interface ProdutoRepository extends PagingAndSortingRepository<Produto , Integer>{
+public interface ProdutoRepository extends JpaRepository<Produto , Integer>{
 
-	Iterable<Produto> findAll();
+	List<Produto> findAll();
 
 	Optional<Produto> findById(int id);
 
